@@ -110,10 +110,9 @@ button:hover {
 }
 
 #myBtn:hover, #myBtnDown:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+    background-color: #555;
 }
 
-/* Styling for the project search bar */
 #searchBar {
     padding: 10px;
     width: 100%;
@@ -123,7 +122,6 @@ button:hover {
     outline: none;
 }
 
-/* Styling for the dropdown */
 select {
     padding: 10px;
     width: 100%;
@@ -146,7 +144,6 @@ button:hover {
     background-color: #555;
 }
 
-/* Project container */
 .project-container {
     display: flex;
     flex-wrap: wrap;
@@ -155,7 +152,6 @@ button:hover {
     margin-top: 20px;
 }
 
-/* Individual project cards */
 .project-card {
     background-color: #f4f4f4;
     border: 1px solid #ccc;
@@ -179,5 +175,6 @@ button:hover {
 .project-card p {
     color: #666;
 }
+
 
 
