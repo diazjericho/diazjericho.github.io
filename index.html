@@ -22,7 +22,9 @@
     <br>
     <p>I am always willing to enhance my skills to improve my knowledge of various things.
         I am also eager to showcase my abilities and contribute to the company's further growth without any doubts.
-        I am a self-taught programmer since the start of my college years.</p>
+        I am a self-taught programmer since the start of my college years.
+        My resume can be seen <a href="#" data-bs-toggle="modal" data-bs-target="#resumeModal" style="text-decoration: none; color: blue; cursor: pointer">here</a>.
+    </p>
     <br>
 
     <h1>My skillsets</h1>
@@ -59,8 +61,72 @@
 
 <section id="projects">
     <h1>Relevant Projects</h1>
-    <div class="project" style="text-align: center">
-        <h3 style="margin: 0">Under maintenance! Come back here soon.</h3>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+        <input type="text" id="searchBar" placeholder="Search for projects..." onkeyup="filterProjects()" style="margin-bottom: 8px">
+
+        <select id="frameworkFilter" onchange="filterProjects()" style="margin-bottom: 8px">
+            <option value="all">All</option>
+            <option value="csharp">C#</option>
+            <option value="csharp">C++</option>
+            <option value="python">Python</option>
+            <option value="php">PHP</option>
+            <option value="web">Web Application</option>
+            <option value="mobile">Mobile Application</option>
+            <option value="windows">Windows Application</option>
+            <option value="console">Console Application</option>
+        </select>
+
+        <button onclick="clearFilters()">Clear filter</button>
+    </div>
+
+    <div class="project-container" style="text-align: center">
+        <div class="project-card" data-tags="csharp inventory system pos point of sales" data-framework="csharp windows">
+            <h3>Inventory System with POS (Point of Sales)</h3>
+            <p>A system that uses C# and MySQL for inventory grocery system.</p>
+        </div>
+        <div class="project-card" data-tags="csharp web facilities requisition" data-framework="web csharp">
+            <h3>Automated Facilities Requisition</h3>
+            <p>A system that automated the requisition by booking an appointment and checks if that facility is available.
+                This uses C# ASP.Net Core as the main framework and Entity Framework as the database.</p>
+        </div>
+        <div class="project-card" data-tags="python automated coin counter machine-learning" data-framework="python">
+            <h3>Automated Coin Counter</h3>
+            <p>Using the Raspberry Pi 4B as the main computer and Python as the main language, it counts various Peso coins ranging from 1 Peso to 20 Peso.
+            It uses OpenCV, CVZone and PYTTSX3 libraries in order to detect and say the amount/total coins that can be seen on its own surface.</p>
+        </div>
+        <div class="project-card" data-tags="android mobile grade calculator realm kotlin" data-framework="mobile">
+            <h3>Grade Calculator (Android)</h3>
+            <p>A simple grade calculator that auto-calculates the grades per subjects, per semester, and per year.
+                It uses Kotlin as the main language and Realm as the database.</p>
+        </div>
+        <div class="project-card" data-tags="android mobile expense tracker sqlite kotlin" data-framework="mobile">
+            <h3>Expense Tracker for Android</h3>
+            <p>A simple expense tracker that tracks all of the money spent per year and per month. It uses Kotlin as the main language and SQlite as the database.</p>
+        </div>
+        <div class="project-card" data-tags="android mobile flavor fusion realm kotlin" data-framework="mobile">
+            <h3>Flavor Fusion (Android)</h3>
+            <p>Using the TheMealDB API, it showcases different foods from different areas of the world and the user can make his/her own recipe.
+                It uses Kotlin as the main language and Realm as the database.</p>
+        </div>
+        <div class="project-card" data-tags="android mobile purrfect pals realm kotlin" data-framework="mobile">
+            <h3>Purrfect Pals (Android)</h3>
+            <p>A simple pet management application that manages pets and their owners.
+                It uses Kotlin as the main language and Realm as the database.</p>
+        </div>
+        <div class="project-card" data-tags="android mobile skycaster weather api kotlin" data-framework="mobile">
+            <h3>SkyCaster (Android)</h3>
+            <p>Using the OpenWeatherMap API, it shows the weather information for the selected area. It uses Kotlin as the main language.</p>
+        </div>
+        <div class="project-card" data-tags="android mobile pagekeeper realm kotlin" data-framework="mobile">
+            <h3>PageKeeper (Android)</h3>
+            <p>A simple book management application and has a function for favorites and archived.
+                It uses Kotlin as the main language and Realm as the main database.</p>
+        </div>
+        <div class="project-card" data-tags="php student management application mysql" data-framework="php web">
+            <h3>Student Management Application</h3>
+            <p>A simple student management web application that manages students and their grades. It uses PHP as the main language and MySQL as the main database.</p>
+        </div>
     </div>
 </section>
 
@@ -69,7 +135,6 @@
         Click here.
     </a>
     </h3>
-
 </section>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Go back to top</button>
@@ -100,6 +165,21 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Modal for PDF Viewer -->
+<div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resumeModalLabel">Resume - Jericho V. Diaz</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <embed src="/cv/Resume - Jericho V. Diaz.pdf" type="application/pdf" width="100%" height="600px">
             </div>
         </div>
     </div>

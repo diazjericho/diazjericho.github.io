@@ -30,3 +30,37 @@ form.addEventListener('submit', e => {
         .catch(error => console.error('Error!', error.message))
 })
 
+// Filter projects
+function filterProjects() {
+    const searchInput = document.getElementById('searchBar').value.toLowerCase();
+    const selectedFramework = document.getElementById('frameworkFilter').value.toLowerCase();
+    const projectCards = document.querySelectorAll('.project-card');
+
+    projectCards.forEach(card => {
+        const projectTitle = card.querySelector('h3').textContent.toLowerCase();
+        const projectTags = card.getAttribute('data-tags').toLowerCase();
+        const projectFramework = card.getAttribute('data-framework').toLowerCase();
+
+        // Show or hide project cards based on search input and framework dropdown selection
+        if (
+            (projectTitle.includes(searchInput) || projectTags.includes(searchInput)) &&
+            (selectedFramework === 'all' || projectFramework.includes(selectedFramework))
+        ) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Clear filter for projects
+function clearFilters() {
+    // Clear search bar and dropdown selection
+    document.getElementById('searchBar').value = '';
+    document.getElementById('frameworkFilter').value = 'all';
+
+    // Reset the filter to show all projects
+    filterProjects();
+}
+
+
