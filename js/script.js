@@ -1,21 +1,45 @@
 // Get the button:
 let mybutton = document.getElementById("myBtn");
+let myButtonDown = document.getElementById("myBtnDown");
 
-// When the user scrolls down 20px from the top of the document, show the button
+// When the user scrolls down 20px from the top of the document, show the buttons
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+
+    // Show both buttons when scrolled 20px down
+    if (scrollTop > 20) {
+        mybutton.style.display = "block"; // Show "Go back to top" button
+        myButtonDown.style.display = "block"; // Show "Go to bottom" button
+        mybutton.style.bottom = "90px"; // Ensure the "Go back to top" button is above "Go to bottom"
     } else {
-        mybutton.style.display = "none";
+        mybutton.style.display = "none"; // Hide "Go back to top" button
+        myButtonDown.style.display = "block"; // Ensure the "Go to bottom" button shows initially
+        myButtonDown.style.bottom = "20px"; // Reset "Go to bottom" position to default when "Go back to top" is hidden
+    }
+
+    // Hide "Go to bottom" button when near the bottom of the page
+    if (scrollTop + clientHeight >= scrollHeight - 100) { // Adjust the buffer (100px) as needed
+        myButtonDown.style.display = "none";
+        mybutton.style.bottom = "20px"; // Move "Go back to top" button to the bottom when "Go to bottom" is hidden
     }
 }
+
+
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+// When the user clicks on the button, scroll to the bottom of the document
+function bottomFunction() {
+    document.body.scrollTop = document.body.scrollHeight; // For Safari
+    document.documentElement.scrollTop = document.documentElement.scrollHeight; // For Chrome, Firefox, IE and Opera
 }
 
 // Website accepting responses

@@ -68,7 +68,7 @@
         <select id="frameworkFilter" onchange="filterProjects()" style="margin-bottom: 8px">
             <option value="all">All</option>
             <option value="csharp">C#</option>
-            <option value="csharp">C++</option>
+            <option value="c++">C++</option>
             <option value="python">Python</option>
             <option value="php">PHP</option>
             <option value="web">Web Application</option>
@@ -127,6 +127,14 @@
             <h3>Student Management Application</h3>
             <p>A simple student management web application that manages students and their grades. It uses PHP as the main language and MySQL as the main database.</p>
         </div>
+        <div class="project-card" data-tags="c++ arduino weather information system" data-framework="c++ arduino">
+            <h3>Weather Information System (Arduino)</h3>
+            <p>A simple weather information system made for Arduino Mega2560 and transmits data to an Android phone. It uses C++ as the main framework.</p>
+        </div>
+        <div class="project-card" data-tags="c++ arduino weather information system" data-framework="c++ arduino">
+            <h3>Automated Door Lock (Arduino)</h3>
+            <p>A simple automated door lock made for Arduino Mega2560 and transmits data to an Android phone for verification. It uses C++ as the main framework.</p>
+        </div>
     </div>
 </section>
 
@@ -138,6 +146,7 @@
 </section>
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Go back to top</button>
+<button onclick="bottomFunction()" id="myBtnDown" title="Go to bottom">Go to bottom page</button>
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
